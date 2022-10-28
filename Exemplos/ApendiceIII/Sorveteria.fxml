@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.impacta.javafx.SorveteriaController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="317.0">
+         <children>
+            <Label layoutX="86.0" layoutY="14.0" prefHeight="17.0" prefWidth="217.0" text="Sabor" />
+            <TextField fx:id="txtSabor" layoutX="86.0" layoutY="31.0" prefHeight="25.0" prefWidth="217.0" />
+            <CheckBox fx:id="chkCobertura" layoutX="86.0" layoutY="75.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" text="Cobertura" />
+            <CheckBox fx:id="chkGranulado" layoutX="86.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" text="Granulado" />
+            <RadioButton layoutX="214.0" layoutY="75.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="89.0" selected="true" text="Casquinha">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tipo" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="214.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="89.0" text="Copinho" toggleGroup="$tipo" />
+            <Button layoutX="50.0" layoutY="132.0" mnemonicParsing="false" onAction="#encomendarSorvete" prefHeight="25.0" prefWidth="89.0" text="Ok" />
+            <Button layoutX="178.0" layoutY="132.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
+            <ImageView fitHeight="61.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sorvete.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</VBox>
