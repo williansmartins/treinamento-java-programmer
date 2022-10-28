@@ -1,0 +1,41 @@
+1) Sortear filmes (Movie Roullete)
+
+1.1 O usuário seleciona a opção de sortear um filme 
+1.2 O sistema exibe um formulário de parametrização de sorteio (RN1)
+2.2 O sistema aleatoriamente sorteia um filme baseado nos parâmetros informados e exibe os dados do filme sorteado (RN2) (A1)
+2.3 O usuário visualiza o resultado e pode solicitar um novo sorteio ou sair 
+
+-----
+
+A1: Em caso de não haver filmes que atendam aos critérios informados, a mensagem "Nenhum Filme Encontrado" deve ser exibido
+
+-----
+
+RN1: Dados do Filtro
+
+O filtro pode ser deixado vazio. Neste caso todos os filmes cadastrados serão considerados para o sorteio
+
+Dados que podem ser inseridos no filtro:
+gênero, nota mínima, numero minimo de votos (grau de confiabilidade)
+
+
+-----
+
+RN2: Informações do Filme
+
+Titulo
+Diretores
+nota (0 a 10)
+ano
+Generos
+numero de votos
+duracao em minutos
+url
+
+--------------
+
+
+
+
+
+

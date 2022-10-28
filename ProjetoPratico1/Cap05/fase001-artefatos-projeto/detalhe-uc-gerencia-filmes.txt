@@ -1,0 +1,71 @@
+1) Gerenciar cadastro de filmes
+
+1.1 O usuário seleciona a opção de gerenciamento
+1.2 O sistema exibe um filtro de consulta (2) e a opção de adicionar um 
+novo filme (3)
+
+
+2) Consulta cadastro de filmes com opção de remoção
+
+2.1 O usuário informa os dados do filtro (que pode estar em branco) 
+solicitando a exibição dos filmes que atendem ao filtro (RN1)
+2.2 O sistema exibe Uma lista contendo as informações de cada filme (RN2) (A1)
+2.3 O usuário pode selecionar um filme e executar ação de remover 
+o filme (2.3.1) 
+	2.3.1) O sistema remove o filme do repositório de dados (A2)
+	2.3.2) O sistema atualiza a listagem de filmes reexibindo-a ao usuário 
+
+
+3) Adicionar novo filme
+
+3.1 O usuário escolhe a opção de adicionar um novo filme
+3.2 O sistema exibe o formulário de coleta dos dados do novo filme
+3.3 O usuário informa os dados do filme (RN2) e confirma a operação
+3.4 O sistema armazena o novo filme no repositório de dados
+3.5 O sistema exibe a mensagem de sucesso da operação (A1)
+
+
+-----
+
+A1: Em caso de não haver filmes para a lista, a informação 
+"Nenhum Filme Encontrado" deve ser exibido
+A2: Em caso de falha na operação, exibir uma mensagem ao usuário 
+
+
+-----
+
+RN1: Dados do Filtro
+
+O filtro pode ser deixado vazio. Neste caso todos os filmes devem 
+ser exibidos na lista ordenados por título
+
+Dados que podem ser inseridos no filtro:
+gênero, anoInicial, anoFinal, titulo parcial 
+
+Caso o anoInicial não seja informado, deve ser considerado igual 0 
+que representa sem limite inferior quanto ao ano
+Caso o anoFinal não seja informado, deve ser considerado igual 0 
+que representa sem limite superior quanto ao ano, porém, 
+se for maior que 0 deve ser maior que o ano inicial informado
+
+
+-----
+
+RN2: Informações do Filme
+
+Titulo (Texto Livre)
+Diretores 
+nota [0 a 10]
+ano (>=0)
+Generos 
+numero de votos (>=0)
+duracao em minutos (>=0)
+url
+
+--------------
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+Fase 1: 
+
+Descrição:
+ 
+Implementação base das classes conceituais do projeto a partir dos casos de uso e do diagrama de classes fornecido
+
+- Ponto de inserção: Após conceito de OO (Classes e atributos)
+- Conteúdo: Diagrama de casos de uso, descritivos de casos de uso, diagrama de classe conceitual
+- Prática: Definir o projeto, criar a primeira classe conceitual no projeto
+
+- Projeto fase1 completo: 
+	fase001-prateleiradigital.zip
+	fase001-artefatos-projeto.zip
+
+
+Fase 2: 
+
+Descrição: 
+
+Fluxos principais dos casos de uso mapeados no código com pontos de inserções de código futuros mapeados. Pacotes/Camadas definidas e comunicação entre as classes de acordo com o norteamento dos diagramas de sequência fornecidos
+
+- Ponto de inserção: Após conceito de método/pacotes/construtores
+- Conteúdo: Diagrama de pacotes, diagramas de sequência básicos
+- Primeira noção testes usando o método "main" (preparação para uso do JUnit)
+- Prática: Refactoring definindo os pacotes do sistema, get/set, construtores e implementando fluxo básico das funcionalidades entre camadas
+
+- Projeto fase2 completo: 
+	fase002-prateleiradigital.zip
+	fase002-artefatos-projeto.zip
+	
+
+Fase 3:
+
+- Ponto de Inserção: Após Collections framework
+- Substituir os arrays para os lists 
+- Implementar equals e hashCode na classe Filme (baseados no título e ano do filme)
+- Sobrescrever o toString() para um formato em que sejam exibidos os atributos do filme
+- Implementar a interface Comparable (baseada no título) - Ordenação natural = por Título
+- Colocar retornos fakes nos métodos do DAO (Introdução da noção de mocks)
+- Colocar os tratamentos de exceções apropriados
+- Implementar a funcionalidade de sortear até a chamada do DAO (retorno fake)
+
+- Projeto fase3 completo:
+	fase003-prateleiradigital.zip
+
+
+
+Fase 4: Após I/O 
+
+- Ponto de Inserção: Após I/O 
+- Implementar a funcionalidade de importação até a chamada do DAO
+- Projeto fase4 completo:
+	fase004-prateleiradigital.zip 
+
+
+Fase 5:
+
+- Ponto de Inserção: Após Banco de Dados
+- Implementar a base de dados a partir do modelo
+- Implementar a camada de persistência
+- Projeto fase5 completo: 
+	fase005-prateleiradigital.zip
+	fase005-artefatos-projeto.zip
+

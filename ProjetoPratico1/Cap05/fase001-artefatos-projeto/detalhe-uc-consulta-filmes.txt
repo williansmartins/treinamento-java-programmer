@@ -1,0 +1,41 @@
+1) Consulta cadastro de filmes 
+
+1.1 O usuário informa os dados do filtro (que pode estar em branco) 
+solicitando a exibição dos filmes que atendem ao filtro (RN1)
+1.2 O sistema exibe Uma lista contendo as informações de cada filme (RN2) (A1)
+
+-----
+
+A1: Em caso de não haver filmes para a lista, a informação 
+"Nenhum Filme Encontrado" deve ser exibido
+
+-----
+
+RN1: Dados do Filtro
+
+O filtro pode ser deixado vazio. Neste caso todos os filmes devem 
+ser exibidos na lista ordenados por título e paginado a cada 50 ocorrências
+
+Dados que podem ser inseridos no filtro:
+gênero, ano, titulo parcial 
+
+-----
+
+RN2: Informações do Filme
+
+Titulo
+Diretores
+nota (0 a 10)
+ano
+Generos
+numero de votos
+duracao em minutos
+url
+
+--------------
+
+
+
+
+
+
