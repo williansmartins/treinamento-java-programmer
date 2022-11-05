@@ -8,10 +8,23 @@ import br.com.impacta.persistencia.Filme;
 public class CriarFilme {
 	
 	public static void main(String[] args) {
-
+		boolean continuar = true; 
+		
+		while(continuar) {
+			criarFilme();
+			System.out.println("Deseja continuar (S/N)?");
+			Scanner scan = new Scanner(System.in);
+			String confirmacao = scan.nextLine();
+			
+			if(confirmacao.equalsIgnoreCase("N")) {
+				continuar = false;
+			}			
+		}
+		
+		System.out.println("Fim!");
 	}
 	
-	void criarFilme() {
+	static void criarFilme() {
 		Scanner scan = new Scanner(System.in);
 		Filme filme = new Filme();
 		
