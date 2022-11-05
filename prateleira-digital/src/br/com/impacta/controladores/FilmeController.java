@@ -4,11 +4,14 @@ import br.com.impacta.persistencia.Filme;
 
 public class FilmeController {
 	
-	Filme filmes[] = new Filme[10];		
+	Filme galeria[] = new Filme[10];
+	
 
 	//criar
 	public void criar(Filme filme){
+		galeria[Filme.contador] = filme;
 		
+		System.out.println(Filme.contador);
 	}
 	
 	//consultar

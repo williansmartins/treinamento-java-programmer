@@ -2,8 +2,10 @@ package br.com.impacta.persistencia;
 
 public class Filme {
 
+	public static int contador;
+	
 	public Filme() {
-		
+		contador++;
 	}
 
 	public Filme(String titulo, String diretores, double nota, int duracao, int ano, String generos, int numVotos,
