@@ -7,8 +7,6 @@ import br.com.impacta.persistencia.Filme;
 
 public class CriarFilme {
 	
-	//um comentario
-	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Filme filme = new Filme();

@@ -1,4 +1,4 @@
-package br.com.impacta.controladores;
+package br.com.impacta.testes;
 
 import br.com.impacta.persistencia.Filme;
 

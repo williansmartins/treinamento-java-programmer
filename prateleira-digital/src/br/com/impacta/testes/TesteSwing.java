@@ -8,16 +8,12 @@ public class TesteSwing {
 		String a = JOptionPane.showInputDialog("Valor A");
 		String b = JOptionPane.showInputDialog("Valor B");
 		
-		int aInteiro = 0;
-		int bInteiro = 0;
-		int soma = 0;
-		
 		try {
 			
-			aInteiro = Integer.parseInt(a);
-			bInteiro = Integer.parseInt(b);			
-			soma = aInteiro / bInteiro;
-			JOptionPane.showMessageDialog(null, null);
+			int aInteiro = Integer.parseInt(a);
+			int bInteiro = Integer.parseInt(b);			
+			int soma = aInteiro / bInteiro;
+			JOptionPane.showMessageDialog(null, soma);
 			
 		}catch(NumberFormatException e) {
 			System.out.println("conversao");
@@ -28,6 +24,8 @@ public class TesteSwing {
 		}catch(Exception e) {
 			System.out.println("nao sei");
 		}	
+		
+		
 		
 		
 	}

@@ -8,7 +8,7 @@ public class FilmeController {
 
 	//criar
 	public void criar(Filme filme){
-		System.out.println(filmes.length);
+		
 	}
 	
 	//consultar
