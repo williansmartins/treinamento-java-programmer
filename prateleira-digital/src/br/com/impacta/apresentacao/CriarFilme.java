@@ -8,6 +8,10 @@ import br.com.impacta.persistencia.Filme;
 public class CriarFilme {
 	
 	public static void main(String[] args) {
+
+	}
+	
+	void criarFilme() {
 		Scanner scan = new Scanner(System.in);
 		Filme filme = new Filme();
 		
@@ -72,6 +76,5 @@ public class CriarFilme {
 		
 		FilmeController controller = new FilmeController();
 		controller.criar(filme);
-
 	}
 }
