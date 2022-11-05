@@ -35,6 +35,8 @@ public class CriarFilme {
 		filme.titulo = titulo;
 		System.out.println("----");
 		
+		/*
+		
 		//diretores
 		System.out.println("Digite o diretores do Filme:");
 		String diretores = scan.nextLine();
@@ -83,6 +85,8 @@ public class CriarFilme {
 		System.out.println("url do filme escolhido é: " + url);
 		filme.url = url;
 		System.out.println("----");
+		
+		*/
 		
 		//final
 		System.out.println(filme);
