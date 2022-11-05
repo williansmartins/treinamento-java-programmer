@@ -7,6 +7,8 @@ import br.com.impacta.persistencia.Filme;
 
 public class CriarFilme {
 	
+	static FilmeController controller = new FilmeController();
+
 	public static void main(String[] args) {
 		boolean continuar = true; 
 		
@@ -91,7 +93,6 @@ public class CriarFilme {
 		//final
 		System.out.println(filme);
 		
-		FilmeController controller = new FilmeController();
 		controller.criar(filme);
 	}
 }
