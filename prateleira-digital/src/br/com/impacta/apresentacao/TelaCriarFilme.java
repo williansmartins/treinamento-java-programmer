@@ -39,6 +39,44 @@ public class TelaCriarFilme {
 		frame.add(caixaTitulo);
 		
 		//diretores
+		JLabel labelDiretores = new JLabel("Diretores:");
+		labelDiretores.setBounds(50-10, 150, 100, 30);
+		JTextField caixaDiretores = new JTextField(20);
+		caixaDiretores.setBounds(margem1, 150, 200, 30);	
+		frame.add(labelDiretores);
+		frame.add(caixaDiretores);
+		
+		//ano (1)
+		JLabel labelAno = new JLabel("Ano:");
+		labelAno.setBounds(50, 200, 100, 30);
+		JTextField caixaAno = new JTextField(2);
+		caixaAno.setBounds(100, 200, 50, 30);	
+		frame.add(labelAno);
+		frame.add(caixaAno);
+		
+		//duracao (2)
+		JLabel labelDuracao = new JLabel("Duração:");
+		labelDuracao.setBounds(170, 200, 100, 30);
+		JTextField caixaDuracao = new JTextField(2);
+		caixaDuracao.setBounds(250, 200, 50, 30);	
+		frame.add(labelDuracao);
+		frame.add(caixaDuracao);
+		
+		//voto (3)
+		JLabel labelVoto = new JLabel("Voto:");
+		labelVoto.setBounds(320, 200, 100, 30);
+		JTextField caixaVoto = new JTextField(2);
+		caixaVoto.setBounds(370, 200, 50, 30);	
+		frame.add(labelVoto);
+		frame.add(caixaVoto);
+		
+		//nota (4)
+		JLabel labelNota = new JLabel("Nota:");
+		labelNota.setBounds(440, 200, 100, 30);
+		JTextField caixaNota = new JTextField(2);
+		caixaNota.setBounds(490, 200, 50, 30);	
+		frame.add(labelNota);
+		frame.add(caixaNota);
 		
 		
 		frame.setLayout(null);
