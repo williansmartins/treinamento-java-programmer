@@ -5,32 +5,38 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 
 public class TesteSwing2 {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Olá Janela!");
 		frame.setVisible(true);
-		frame.setSize(400,200);
+		frame.setSize(800, 600);
 		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);
-  
-		JButton b1 = new JButton();
-	    b1.setVisible(true);
-	    b1.setText("Salvar");
-	    b1.setBounds(50,100,100,20);  
-//	    b1.setSize(200,20);
-	    frame.add(b1);
-	    
-	    final JTextField textField =new JTextField();  
-	    
-	    
-	    b1.addActionListener(new ActionListener(){  
+		
+		JButton botao1 = new JButton("Abrir");
+		botao1.setSize(200, 30);
+		botao1.setLocation(50, 50);
+		frame.add(botao1);
+		
+		JButton botao2 = new JButton("Salvar");
+		botao2.setSize(200, 30);
+		botao2.setLocation(50, 100);
+		frame.add(botao2);
+
+		JButton botao3 = new JButton("Fechar");
+		botao3.setSize(200, 30);
+		botao3.setLocation(50, 150);
+		frame.add(botao3);
+		
+		botao3.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-	    		textField.setText("Novo texto");  
-	    	        }  
-	    	    }); 
+	    		System.out.println("Fechando...");
+	    	}  
+		});
+		
+		
+		
 	}
 }

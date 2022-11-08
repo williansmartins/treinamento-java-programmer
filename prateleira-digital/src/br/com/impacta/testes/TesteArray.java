@@ -1,31 +1,29 @@
 package br.com.impacta.testes;
 
-import br.com.impacta.persistencia.Filme;
-
 public class TesteArray {
 
 	public static void main(String[] args) {
-		int[] idade = {12, 13, 14, 15};
-		String[] textos = {"Gustavo", "lima", "e você"};
+		String nome1 = "Willians";
+		String nome2 = "Luis";
+		String nome3 = "Rosália";
 		
-		Filme f1 = new Filme();
-		Filme f2 = new Filme();
-		Filme f3 = new Filme();
+		String []nomes = new String[10];
+
+		nomes[9] = nome1;
+		nomes[0] = nome2;
+		nomes[1] = nome3;
 		
-		Filme[] filmes = {f1,f2,f3};
+		for(int i = 0; i<=9; i++){
+			System.out.println(i + "..." + nomes[i]);
+		}
 		
+		nomes[9] = null;
 		
-		int ints[][] = {idade,idade,idade};
-		
-		System.out.println(textos[0]);
-		System.out.println(textos[1]);
-		System.out.println(textos[2]);		
-				
-		System.out.println();
-		
-		
-		
-		
+		int i = 0;
+		for(String nome : nomes){
+			System.out.println(i + "..." + nome);
+			i++;
+		}
 	}
 
 }

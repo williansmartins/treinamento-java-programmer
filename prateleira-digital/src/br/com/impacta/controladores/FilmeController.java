@@ -13,7 +13,7 @@ public class FilmeController {
 		System.out.println(Filme.contador);
 		
 		for (int i = 0; i < galeria.length; i++) {
-			System.out.println(galeria[i]);			
+			System.out.println(galeria[i]);
 		}
 	}
 	
