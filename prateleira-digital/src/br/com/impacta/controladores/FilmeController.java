@@ -9,7 +9,7 @@ public class FilmeController {
 
 	//criar
 	public void criar(Filme filme){
-		galeria[Filme.contador] = filme;		
+		galeria[Filme.contador-1] = filme;		
 		System.out.println(Filme.contador);
 		
 		for (int i = 0; i < galeria.length; i++) {

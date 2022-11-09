@@ -20,6 +20,7 @@ public class TelaCriarFilme {
 
 	public static void main(String[] args) {
 		int margem1 = 100;
+		FilmeController controller = new FilmeController();
 		
 		JFrame frame = new JFrame();
 		frame.setSize(800, 600);
@@ -127,7 +128,7 @@ public class TelaCriarFilme {
 				filme.generos = stringGeneros;
 				//...
 				
-				FilmeController controller = new FilmeController();
+				
 				controller.criar(filme);				
 			}
 		});
