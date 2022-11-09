@@ -1,11 +1,15 @@
 package br.com.impacta.apresentacao;
 
+import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 public class TelaCriarFilme {
 
@@ -27,7 +31,7 @@ public class TelaCriarFilme {
 		
 		JLabel labelTopo = new JLabel("Gerenciamento de filmes");
 		labelTopo.setFont(new Font("Arial", Font.BOLD, 34));
-		labelTopo.setBounds(50, 5, 500, 50);
+		labelTopo.setBounds(188, 5, 500, 50);
 		frame.add(labelTopo);
 		
 		//titulo
@@ -74,10 +78,30 @@ public class TelaCriarFilme {
 		JLabel labelNota = new JLabel("Nota:");
 		labelNota.setBounds(440, 200, 100, 30);
 		JTextField caixaNota = new JTextField(2);
-		caixaNota.setBounds(490, 200, 50, 30);	
+		caixaNota.setBounds(490, 200, 50, 30);
 		frame.add(labelNota);
 		frame.add(caixaNota);
 		
+		//url
+		JLabel labelUrl = new JLabel("URL:");
+		labelUrl.setBounds(50, 250, 100, 30);
+		JTextField caixaUrl = new JTextField();
+		caixaUrl.setBounds(margem1, 250, 200, 30);
+		frame.add(labelUrl);
+		frame.add(caixaUrl);
+		
+		//Generos
+		JLabel labelGeneros = new JLabel("Generos:");
+		labelGeneros.setBounds(50-10, 300, 100, 30);
+		JTextArea caixaGeneros = new JTextArea();
+		caixaGeneros.setBounds(margem1, 300, 200, 100);
+		
+		Border border = BorderFactory.createLineBorder(Color.GRAY);
+		caixaGeneros.setBorder(BorderFactory.createCompoundBorder(border,
+	            BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+	    
+		frame.add(labelGeneros);
+		frame.add(caixaGeneros);
 		
 		frame.setLayout(null);
 		frame.setVisible(true);
