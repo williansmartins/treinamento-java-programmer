@@ -2,6 +2,8 @@ package br.com.impacta.apresentacao;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -10,6 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+
+import br.com.impacta.controladores.FilmeController;
+import br.com.impacta.persistencia.Filme;
 
 public class TelaCriarFilme {
 
@@ -34,6 +39,7 @@ public class TelaCriarFilme {
 		labelTopo.setBounds(188, 5, 500, 50);
 		frame.add(labelTopo);
 		
+		
 		//titulo
 		JLabel labelTitulo = new JLabel("Título:");
 		labelTitulo.setBounds(50, 100, 100, 30);
@@ -42,6 +48,7 @@ public class TelaCriarFilme {
 		frame.add(labelTitulo);
 		frame.add(caixaTitulo);
 		
+	
 		//diretores
 		JLabel labelDiretores = new JLabel("Diretores:");
 		labelDiretores.setBounds(50-10, 150, 100, 30);
@@ -105,6 +112,26 @@ public class TelaCriarFilme {
 		
 		frame.setLayout(null);
 		frame.setVisible(true);
+		
+		botaoSalvar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String stringTitulo = caixaTitulo.getText();
+				String stringGeneros = caixaGeneros.getText();
+				String stringNota = caixaNota.getText();
+				//...
+				
+				Filme filme = new Filme();
+				filme.titulo = stringTitulo;
+				filme.generos = stringGeneros;
+				//...
+				
+				FilmeController controller = new FilmeController();
+				controller.criar(filme);				
+			}
+		});
+		
 	}
 
 }
