@@ -10,7 +10,7 @@ public class TesteCollectionArrayList {
 		lista.add("Willians");
 		lista.add("Luis");
 		lista.add("Luis");
-		lista.add("Rosalia");		
+		lista.add("Rosalia");	
 		
 		
 		System.out.println(lista);	

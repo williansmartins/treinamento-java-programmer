@@ -121,13 +121,21 @@ public class TelaCriarFilme {
 				String stringTitulo = caixaTitulo.getText();
 				String stringGeneros = caixaGeneros.getText();
 				String stringNota = caixaNota.getText();
-				//...
+				String stringDiretores = caixaDiretores.getText();
+				String stringAno = caixaAno.getText();
+				String stringDuracao = caixaDuracao.getText();
+				String stringVoto = caixaVoto.getText();
+				String stringUrl = caixaUrl.getText();
 				
 				Filme filme = new Filme();
 				filme.titulo = stringTitulo;
+				filme.ano = Integer.parseInt(stringAno);
 				filme.generos = stringGeneros;
-				//...
-				
+				filme.nota = Integer.parseInt(stringNota);
+				filme.diretores = stringDiretores;
+				filme.duracao = Integer.parseInt(stringDuracao);
+				filme.numVotos = Integer.parseInt(stringVoto);
+				filme.url = stringUrl;				
 				
 				controller.criar(filme);				
 			}

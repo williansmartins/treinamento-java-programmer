@@ -1,10 +1,15 @@
 package br.com.impacta.controladores;
 
+import java.util.List;
+
 import br.com.impacta.persistencia.Filme;
+import br.com.impacta.testes.WILLList;
 
 public class FilmeController {
 	
 	Filme galeria[] = new Filme[10];
+	
+	
 	
 
 	//criar
@@ -15,6 +20,9 @@ public class FilmeController {
 		for (int i = 0; i < galeria.length; i++) {
 			System.out.println(galeria[i]);
 		}
+		
+		List listaEspecial = new WILLList();
+		System.out.println(listaEspecial.size());
 	}
 	
 	//consultar
