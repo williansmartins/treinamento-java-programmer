@@ -9,6 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
@@ -28,11 +29,10 @@ public class TelaCriarFilme {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
 		JButton botaoSalvar = new JButton();
 		botaoSalvar.setText("Salvar");
 		botaoSalvar.setSize(150, 40);
-		botaoSalvar.setLocation(550, 450);
+		botaoSalvar.setLocation(margem1, 450);
 		frame.add(botaoSalvar);
 		
 		JLabel labelTopo = new JLabel("Gerenciamento de filmes");
@@ -103,6 +103,24 @@ public class TelaCriarFilme {
 		labelGeneros.setBounds(50-10, 300, 100, 30);
 		JTextArea caixaGeneros = new JTextArea();
 		caixaGeneros.setBounds(margem1, 300, 200, 100);
+		
+		//Tabela
+//	    Object [][] dados = {
+//	            {"Ana Monteiro", "48 9923-7898", "ana.monteiro@gmail.com"},
+//	            {"João da Silva", "48 8890-3345", "joaosilva@hotmail.com"},
+//	            {"Pedro Cascaes", "48 9870-5634", "pedrinho@gmail.com"}
+//	        };
+		
+		 Object [][] dados = {};
+
+        String [] colunas = {"Nome", "Telefone", "Email"};
+        JTable tabela = new JTable(dados, colunas);
+        tabela.setBounds(570, 100, 200, 300);		
+		frame.add(tabela);
+		
+		
+		
+		
 		
 		Border border = BorderFactory.createLineBorder(Color.GRAY);
 		caixaGeneros.setBorder(BorderFactory.createCompoundBorder(border,
