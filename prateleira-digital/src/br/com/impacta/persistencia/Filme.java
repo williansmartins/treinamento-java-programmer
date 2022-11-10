@@ -34,9 +34,10 @@ public class Filme {
 
 	@Override
 	public String toString() {
-		return "Filme " + '\n' + "[" + '\n' + " titulo=" + titulo + '\n' + " diretores=" + diretores + '\n' + " nota="
-				+ nota + '\n' + " duracao=" + duracao + '\n' + " ano=" + ano + '\n' + " generos=" + generos + '\n'
-				+ " numVotos=" + numVotos + '\n' + " url=" + url + '\n' + "]";
+		return "Filme [titulo=" + titulo + ", diretores=" + diretores + ", nota=" + nota + ", duracao=" + duracao
+				+ ", ano=" + ano + ", generos=" + generos + ", numVotos=" + numVotos + ", url=" + url + "]";
 	}
+
+
 
 }

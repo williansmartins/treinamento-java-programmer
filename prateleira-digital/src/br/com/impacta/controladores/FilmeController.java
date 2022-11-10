@@ -16,6 +16,8 @@ public class FilmeController {
 		for (Filme f : galeria) {
 			System.out.println(f);
 		}
+		
+		System.out.println(galeria.size());
 	}
 	
 	//consultar
