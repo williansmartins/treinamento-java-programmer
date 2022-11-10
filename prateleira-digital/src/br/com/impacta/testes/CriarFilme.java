@@ -1,4 +1,4 @@
-package br.com.impacta.apresentacao;
+package br.com.impacta.testes;
 
 import java.util.Scanner;
 
