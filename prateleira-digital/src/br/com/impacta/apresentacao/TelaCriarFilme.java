@@ -13,6 +13,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 
 import br.com.impacta.controladores.FilmeController;
 import br.com.impacta.persistencia.Filme;
@@ -105,16 +106,14 @@ public class TelaCriarFilme {
 		caixaGeneros.setBounds(margem1, 300, 200, 100);
 		
 		//Tabela
-	    Object [][] dados = {
-	            {"Ana Monteiro", "48 9923-7898", "ana.monteiro@gmail.com"},
-	            {"João da Silva", "48 8890-3345", "joaosilva@hotmail.com"},
-	            {"Pedro Cascaes", "48 9870-5634", "pedrinho@gmail.com"}
-	        };
-
-        String [] colunas = {"Nome", "Telefone", "Email"};
-        JTable tabela = new JTable(dados, colunas);
-        tabela.setBounds(570, 100, 200, 300);		
+		DefaultTableModel modelo = new DefaultTableModel();
+		JTable tabela = new JTable(modelo);
+		tabela.setBounds(570, 100, 200, 300);		
 		frame.add(tabela);
+		modelo.addColumn("Titulo");
+		modelo.addColumn("Ano");
+
+	
 		
 		
 		
@@ -153,7 +152,7 @@ public class TelaCriarFilme {
 				filme.numVotos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
-				controller.criar(filme);				
+				controller.criar(filme, modelo);				
 			}
 		});
 		

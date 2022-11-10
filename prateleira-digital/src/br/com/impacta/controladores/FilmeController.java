@@ -3,6 +3,8 @@ package br.com.impacta.controladores;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.table.DefaultTableModel;
+
 import br.com.impacta.persistencia.Filme;
 
 public class FilmeController {
@@ -10,12 +12,13 @@ public class FilmeController {
 	List<Filme> galeria = new ArrayList<Filme>();	
 
 	//criar
-	public void criar(Filme filme){
+	public void criar(Filme filme, DefaultTableModel modelo){
 		galeria.add(filme);		
+		modelo.addRow(new Object[] { "x","y"}); 	
 		
-		for (Filme f : galeria) {
-			System.out.println(f);
-		}
+//		for (Filme f : galeria) {
+//			System.out.println(f);
+//		}
 		
 		System.out.println(galeria.size());
 	}
