@@ -1,28 +1,21 @@
 package br.com.impacta.controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.impacta.persistencia.Filme;
-import br.com.impacta.testes.WILLList;
 
 public class FilmeController {
 	
-	Filme galeria[] = new Filme[10];
-	
-	
-	
+	List<Filme> galeria = new ArrayList<Filme>();	
 
 	//criar
 	public void criar(Filme filme){
-		galeria[Filme.contador-1] = filme;		
-		System.out.println(Filme.contador);
+		galeria.add(filme);		
 		
-		for (int i = 0; i < galeria.length; i++) {
-			System.out.println(galeria[i]);
+		for (Filme f : galeria) {
+			System.out.println(f);
 		}
-		
-		List listaEspecial = new WILLList();
-		System.out.println(listaEspecial.size());
 	}
 	
 	//consultar
