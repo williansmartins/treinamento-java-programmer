@@ -18,6 +18,8 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import br.com.impacta.controladores.FilmeController;
@@ -47,11 +49,11 @@ public class TelaCriarFilme {
 		botaoExcluir.setLocation(270, 450);
 		frame.add(botaoExcluir);
 		
-		JButton botaoExtra = new JButton();
-		botaoExtra.setText("Limpar");
-		botaoExtra.setSize(150, 40);
-		botaoExtra.setLocation(440, 450);
-		frame.add(botaoExtra);
+		JButton botaoLimpar = new JButton();
+		botaoLimpar.setText("Limpar");
+		botaoLimpar.setSize(150, 40);
+		botaoLimpar.setLocation(440, 450);
+		frame.add(botaoLimpar);
 		
 		JLabel labelTopo = new JLabel("Gerenciamento de filmes");
 		labelTopo.setFont(new Font("Arial", Font.BOLD, 34));
@@ -198,7 +200,7 @@ public class TelaCriarFilme {
 			}
 		});
 		
-		botaoExtra.addActionListener(new ActionListener() {
+		botaoLimpar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
 				caixaTitulo.setText("");			
@@ -226,7 +228,20 @@ public class TelaCriarFilme {
 			}
 		});
 		
+		tabela.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+		    @Override
+		    public void valueChanged(ListSelectionEvent event) {
+	        	int linha = tabela.getSelectedRow();
+				String titulo = tabela.getValueAt(linha, 0).toString();
+				System.out.println(titulo);
+				caixaTitulo.setText(titulo);
+				
+				System.out.println();
+		    }
+		});
 		
+		
+
 	}
 
 }

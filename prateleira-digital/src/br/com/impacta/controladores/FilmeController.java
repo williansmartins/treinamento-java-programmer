@@ -9,7 +9,7 @@ import br.com.impacta.persistencia.Filme;
 
 public class FilmeController {
 	
-	List<Filme> galeria = new ArrayList<Filme>();	
+	public List<Filme> galeria = new ArrayList<Filme>();	
 
 	//criar
 	public void criar(Filme filme, DefaultTableModel modelo){
