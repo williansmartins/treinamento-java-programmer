@@ -12,7 +12,7 @@ public class FilmeControllerTest {
 	private static void testaCriarFilme() {
 		Filme f2 = new Filme("Star Wars", "diretor1, diretor2",9.9,120,1980, "suspense", 10, "https://www.site.com.br");
 		FilmeController controller = new FilmeController();
-		controller.criar(f2);
+		controller.criar(f2, null);
 	}
 	
 

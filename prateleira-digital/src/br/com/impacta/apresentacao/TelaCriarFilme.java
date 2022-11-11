@@ -36,6 +36,18 @@ public class TelaCriarFilme {
 		botaoSalvar.setLocation(margem1, 450);
 		frame.add(botaoSalvar);
 		
+		JButton botaoExcluir = new JButton();
+		botaoExcluir.setText("Excluir");
+		botaoExcluir.setSize(150, 40);
+		botaoExcluir.setLocation(270, 450);
+		frame.add(botaoExcluir);
+		
+		JButton botaoExtra = new JButton();
+		botaoExtra.setText("Extra");
+		botaoExtra.setSize(150, 40);
+		botaoExtra.setLocation(440, 450);
+		frame.add(botaoExtra);
+		
 		JLabel labelTopo = new JLabel("Gerenciamento de filmes");
 		labelTopo.setFont(new Font("Arial", Font.BOLD, 34));
 		labelTopo.setBounds(188, 5, 500, 50);
@@ -108,6 +120,7 @@ public class TelaCriarFilme {
 		//Tabela
 		DefaultTableModel modelo = new DefaultTableModel();
 		JTable tabela = new JTable(modelo);
+		tabela.setEnabled(false);
 		tabela.setBounds(570, 100, 200, 300);		
 		frame.add(tabela);
 		modelo.addColumn("Titulo");

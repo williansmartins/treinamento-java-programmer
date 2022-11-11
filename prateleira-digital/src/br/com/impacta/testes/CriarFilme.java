@@ -93,6 +93,6 @@ public class CriarFilme {
 		//final
 		System.out.println(filme);
 		
-		controller.criar(filme);
+		controller.criar(filme, null);
 	}
 }

@@ -14,7 +14,7 @@ public class FilmeController {
 	//criar
 	public void criar(Filme filme, DefaultTableModel modelo){
 		galeria.add(filme);		
-		modelo.addRow(new Object[] { "x","y"}); 	
+		modelo.addRow(new Object[] { filme.titulo, filme.ano}); 	
 		
 //		for (Filme f : galeria) {
 //			System.out.println(f);
