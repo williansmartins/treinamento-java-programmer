@@ -155,6 +155,12 @@ public class TelaCriarFilme {
 		
 		frame.setVisible(true);
 		
+		//popular tabela com dados fake
+		modelo.addRow(new Object[] { "titulo1", 2001}); 
+		modelo.addRow(new Object[] { "titulo2", 2002}); 
+		modelo.addRow(new Object[] { "titulo3", 2003}); 
+		modelo.addRow(new Object[] { "titulo4", 2004}); 
+		
 		//acoes
 		botaoSalvar.addActionListener(new ActionListener() {
 			
@@ -179,7 +185,8 @@ public class TelaCriarFilme {
 				filme.numVotos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
-				controller.criar(filme, modelo);		
+				controller.criar(filme, modelo);	
+				modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
 				
 				caixaTitulo.setText("");	
 				caixaVoto.setText("");
@@ -243,6 +250,10 @@ public class TelaCriarFilme {
 		
 		
 
+	}
+	
+	void popularTabela(){
+		
 	}
 
 }
