@@ -123,28 +123,23 @@ public class TelaCriarFilme {
 		//Tabela
 		DefaultTableModel modelo = new DefaultTableModel();
 		JTable tabela = new JTable(modelo);
-//		tabela.setEnabled(false);
 		tabela.setBounds(570, 100, 100, 300);
-
+		tabela.setDefaultEditor(Object.class, null);
 		
-		JPanel painel = new JPanel();
+		JPanel painel = new JPanel() ;
 		painel.setBounds(560, 100, 220, 320);	
 		painel.setLayout(new BorderLayout());
 		painel.add(tabela.getTableHeader(), BorderLayout.NORTH);
 		painel.add(new JScrollPane(tabela));
-		
 		frame.add(painel);
+		
 		modelo.addColumn("Titulo");
 		modelo.addColumn("Ano");
 
 		tabela.getColumnModel().getColumn(0)
 		.setPreferredWidth(50);
 		tabela.getColumnModel().getColumn(1)
-		.setPreferredWidth(50);
-		
-		
-		
-		
+		.setPreferredWidth(50);		
 		
 		Border border = BorderFactory.createLineBorder(Color.GRAY);
 		caixaGeneros.setBorder(BorderFactory.createCompoundBorder(border,
@@ -187,7 +182,8 @@ public class TelaCriarFilme {
 		botaoExcluir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Excluir");
+				int linhaSelecionada = tabela.getSelectedRow();
+				modelo.removeRow(linhaSelecionada);
 			}
 		});
 		
@@ -195,9 +191,9 @@ public class TelaCriarFilme {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				caixaTitulo.setText("E o vento levou");			
-				caixaVoto.setText("10");			
-				caixaDuracao.setText("120");			
-				caixaAno.setText("2022");			
+				caixaVoto.setText("10");
+				caixaDuracao.setText("120");
+				caixaAno.setText("2022");
 				caixaNota.setText("10");			
 				caixaDiretores.setText("Diretor1 e Diretor2");			
 				caixaUrl.setText("http://www.eoventolevou.com.br");			
