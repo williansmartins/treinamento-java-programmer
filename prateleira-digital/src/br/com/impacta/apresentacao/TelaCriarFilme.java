@@ -1,5 +1,6 @@
 package br.com.impacta.apresentacao;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -9,6 +10,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -120,13 +123,24 @@ public class TelaCriarFilme {
 		//Tabela
 		DefaultTableModel modelo = new DefaultTableModel();
 		JTable tabela = new JTable(modelo);
-		tabela.setEnabled(false);
-		tabela.setBounds(570, 100, 200, 300);		
-		frame.add(tabela);
+//		tabela.setEnabled(false);
+		tabela.setBounds(570, 100, 100, 300);
+
+		
+		JPanel painel = new JPanel();
+		painel.setBounds(560, 100, 220, 320);	
+		painel.setLayout(new BorderLayout());
+		painel.add(tabela.getTableHeader(), BorderLayout.NORTH);
+		painel.add(new JScrollPane(tabela));
+		
+		frame.add(painel);
 		modelo.addColumn("Titulo");
 		modelo.addColumn("Ano");
 
-	
+		tabela.getColumnModel().getColumn(0)
+		.setPreferredWidth(50);
+		tabela.getColumnModel().getColumn(1)
+		.setPreferredWidth(50);
 		
 		
 		
@@ -168,6 +182,29 @@ public class TelaCriarFilme {
 				controller.criar(filme, modelo);				
 			}
 		});
+
+
+		botaoExcluir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Excluir");
+			}
+		});
+		
+		botaoExtra.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				caixaTitulo.setText("E o vento levou");			
+				caixaVoto.setText("10");			
+				caixaDuracao.setText("120");			
+				caixaAno.setText("2022");			
+				caixaNota.setText("10");			
+				caixaDiretores.setText("Diretor1 e Diretor2");			
+				caixaUrl.setText("http://www.eoventolevou.com.br");			
+				caixaGeneros.setText("Romance");			
+			}
+		});
+		
 		
 	}
 
