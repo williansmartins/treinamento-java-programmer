@@ -13,8 +13,7 @@ public class FilmeController {
 
 	//criar
 	public void criar(Filme filme, DefaultTableModel modelo){
-		galeria.add(filme);		
-	
+		galeria.add(filme);			
 		
 //		for (Filme f : galeria) {
 //			System.out.println(f);

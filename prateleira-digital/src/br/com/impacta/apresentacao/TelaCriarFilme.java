@@ -156,10 +156,11 @@ public class TelaCriarFilme {
 		frame.setVisible(true);
 		
 		//popular tabela com dados fake
-		modelo.addRow(new Object[] { "titulo1", 2001}); 
-		modelo.addRow(new Object[] { "titulo2", 2002}); 
-		modelo.addRow(new Object[] { "titulo3", 2003}); 
-		modelo.addRow(new Object[] { "titulo4", 2004}); 
+		popularTabela();
+//		modelo.addRow(new Object[] { "titulo1", 2001}); 
+//		modelo.addRow(new Object[] { "titulo2", 2002}); 
+//		modelo.addRow(new Object[] { "titulo3", 2003}); 
+//		modelo.addRow(new Object[] { "titulo4", 2004}); 
 		
 		//acoes
 		botaoSalvar.addActionListener(new ActionListener() {
@@ -247,13 +248,16 @@ public class TelaCriarFilme {
 				System.out.println(controller.galeria);
 		    }
 		});
-		
-		
 
 	}
 	
-	void popularTabela(){
-		
+	static void popularTabela(){
+		for(int i = 0; i<10; i++) {
+			System.out.println(i);
+			//criar instancia de um FILME
+			//modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+			//controller.criar
+		}
 	}
 
 }
