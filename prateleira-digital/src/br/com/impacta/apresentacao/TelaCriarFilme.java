@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -46,7 +48,7 @@ public class TelaCriarFilme {
 		frame.add(botaoExcluir);
 		
 		JButton botaoExtra = new JButton();
-		botaoExtra.setText("Extra");
+		botaoExtra.setText("Limpar");
 		botaoExtra.setSize(150, 40);
 		botaoExtra.setLocation(440, 450);
 		frame.add(botaoExtra);
@@ -174,7 +176,16 @@ public class TelaCriarFilme {
 				filme.numVotos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
-				controller.criar(filme, modelo);				
+				controller.criar(filme, modelo);		
+				
+				caixaTitulo.setText("");	
+				caixaVoto.setText("");
+				caixaDuracao.setText("");
+				caixaAno.setText("");
+				caixaNota.setText("");			
+				caixaDiretores.setText("");			
+				caixaUrl.setText("");			
+				caixaGeneros.setText("");
 			}
 		});
 
@@ -189,7 +200,21 @@ public class TelaCriarFilme {
 		
 		botaoExtra.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {				
+				caixaTitulo.setText("");			
+				caixaVoto.setText("");
+				caixaDuracao.setText("");
+				caixaAno.setText("");
+				caixaNota.setText("");			
+				caixaDiretores.setText("");			
+				caixaUrl.setText("");			
+				caixaGeneros.setText("");
+			}
+		});
+		
+		labelTopo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent  e) {				
 				caixaTitulo.setText("E o vento levou");			
 				caixaVoto.setText("10");
 				caixaDuracao.setText("120");
@@ -197,7 +222,7 @@ public class TelaCriarFilme {
 				caixaNota.setText("10");			
 				caixaDiretores.setText("Diretor1 e Diretor2");			
 				caixaUrl.setText("http://www.eoventolevou.com.br");			
-				caixaGeneros.setText("Romance");			
+				caixaGeneros.setText("Romance");
 			}
 		});
 		
