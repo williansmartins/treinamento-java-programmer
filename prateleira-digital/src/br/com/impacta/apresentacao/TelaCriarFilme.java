@@ -36,6 +36,8 @@ public class TelaCriarFilme {
 		
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(null);
+		
 		
 		JButton botaoSalvar = new JButton();
 		botaoSalvar.setText("Salvar");
@@ -123,6 +125,12 @@ public class TelaCriarFilme {
 		labelGeneros.setBounds(50-10, 300, 100, 30);
 		JTextArea caixaGeneros = new JTextArea();
 		caixaGeneros.setBounds(margem1, 300, 200, 100);
+		frame.add(labelGeneros);
+		frame.add(caixaGeneros);
+		Border border = BorderFactory.createLineBorder(Color.GRAY);
+		caixaGeneros.setBorder(BorderFactory.createCompoundBorder(border,
+	            BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+	    
 		
 		//Tabela
 		DefaultTableModel modelo = new DefaultTableModel();
@@ -143,18 +151,11 @@ public class TelaCriarFilme {
 		tabela.getColumnModel().getColumn(0)
 		.setPreferredWidth(50);
 		tabela.getColumnModel().getColumn(1)
-		.setPreferredWidth(50);		
+		.setPreferredWidth(50);	
 		
-		Border border = BorderFactory.createLineBorder(Color.GRAY);
-		caixaGeneros.setBorder(BorderFactory.createCompoundBorder(border,
-	            BorderFactory.createEmptyBorder(10, 10, 10, 10)));
-	    
-		frame.add(labelGeneros);
-		frame.add(caixaGeneros);
-		
-		frame.setLayout(null);
 		frame.setVisible(true);
 		
+		//acoes
 		botaoSalvar.addActionListener(new ActionListener() {
 			
 			@Override
@@ -190,7 +191,6 @@ public class TelaCriarFilme {
 				caixaGeneros.setText("");
 			}
 		});
-
 
 		botaoExcluir.addActionListener(new ActionListener() {
 			@Override
@@ -236,7 +236,8 @@ public class TelaCriarFilme {
 				System.out.println(titulo);
 				caixaTitulo.setText(titulo);
 				
-				System.out.println();
+				//objetivo = encontrar 1 filme no meio de vários
+				System.out.println(controller.galeria);
 		    }
 		});
 		
