@@ -255,6 +255,10 @@ public class TelaCriarFilme {
 		for(int i = 0; i<10; i++) {
 			System.out.println(i);
 			//criar instancia de um FILME
+			Filme filme = new Filme();
+			filme.titulo = "Título"+i;
+			filme.ano = 2020+i;
+			
 			//modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
 			//controller.criar
 		}
