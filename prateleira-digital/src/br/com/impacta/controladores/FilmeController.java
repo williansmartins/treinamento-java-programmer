@@ -12,14 +12,8 @@ public class FilmeController {
 	public List<Filme> galeria = new ArrayList<Filme>();	
 
 	//criar
-	public void criar(Filme filme, DefaultTableModel modelo){
+	public void criar(Filme filme){
 		galeria.add(filme);			
-		
-//		for (Filme f : galeria) {
-//			System.out.println(f);
-//		}
-		
-		System.out.println(galeria.size());
 	}
 	
 	//consultar

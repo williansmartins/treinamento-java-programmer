@@ -27,9 +27,10 @@ import br.com.impacta.persistencia.Filme;
 
 public class TelaCriarFilme {
 
+	static FilmeController controller = new FilmeController();
+
 	public static void main(String[] args) {
 		int margem1 = 100;
-		FilmeController controller = new FilmeController();
 		
 		JFrame frame = new JFrame();
 		frame.setSize(800, 600);
@@ -186,7 +187,7 @@ public class TelaCriarFilme {
 				filme.numVotos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
-				controller.criar(filme, modelo);	
+				controller.criar(filme);	
 				modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
 				
 				caixaTitulo.setText("");	
@@ -259,8 +260,11 @@ public class TelaCriarFilme {
 			filme.titulo = "Título"+i;
 			filme.ano = 2020+i;
 			
+			//jogar o filme na galeria
+			controller.criar(filme);
+			
+			//adicionar o filme na tabela
 			//modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
-			//controller.criar
 		}
 	}
 
