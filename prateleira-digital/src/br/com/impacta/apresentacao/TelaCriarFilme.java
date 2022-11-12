@@ -30,6 +30,7 @@ public class TelaCriarFilme {
 
 	static FilmeController controller = new FilmeController();
 	static DefaultTableModel modelo = new DefaultTableModel();
+	static boolean ehNovo = true;
 
 	public static void main(String[] args) {
 		int margem1 = 100;
@@ -238,6 +239,7 @@ public class TelaCriarFilme {
 		tabela.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 		    @Override
 		    public void valueChanged(ListSelectionEvent event) {
+		    	ehNovo = false;
 	        	int linha = tabela.getSelectedRow();
 	        	if(linha>=0 && !event.getValueIsAdjusting() ) {
 					String titulo = tabela.getValueAt(linha, 0).toString();
