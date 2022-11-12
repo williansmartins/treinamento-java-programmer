@@ -179,7 +179,7 @@ public class TelaCriarFilme {
 				filme.titulo = stringTitulo;
 				filme.ano = Integer.parseInt(stringAno);
 				filme.generos = stringGeneros;
-				filme.nota = Integer.parseInt(stringNota);
+				filme.nota = Double.parseDouble(stringNota);
 				filme.diretores = stringDiretores;
 				filme.duracao = Integer.parseInt(stringDuracao);
 				filme.numVotos = Integer.parseInt(stringVoto);
@@ -278,7 +278,7 @@ public class TelaCriarFilme {
 			filme.numVotos = 10+i;
 			filme.duracao = 100*i;
 			filme.ano = 2020+i;
-			filme.nota = 10+i;
+			filme.nota = 10+i; System.out.println(filme.nota);
 			filme.diretores = "Diretor"+i;
 			filme.url = "http://www.filme"+i+".com.br";
 			filme.generos = "Genero"+i;
