@@ -28,6 +28,7 @@ import br.com.impacta.persistencia.Filme;
 public class TelaCriarFilme {
 
 	static FilmeController controller = new FilmeController();
+	static DefaultTableModel modelo = new DefaultTableModel();
 
 	public static void main(String[] args) {
 		int margem1 = 100;
@@ -134,7 +135,7 @@ public class TelaCriarFilme {
 	    
 		
 		//Tabela
-		DefaultTableModel modelo = new DefaultTableModel();
+		
 		JTable tabela = new JTable(modelo);
 		tabela.setBounds(570, 100, 100, 300);
 		tabela.setDefaultEditor(Object.class, null);
@@ -264,7 +265,7 @@ public class TelaCriarFilme {
 			controller.criar(filme);
 			
 			//adicionar o filme na tabela
-			//modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+			modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
 		}
 	}
 

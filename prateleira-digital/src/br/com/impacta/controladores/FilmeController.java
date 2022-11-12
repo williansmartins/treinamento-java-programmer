@@ -3,8 +3,6 @@ package br.com.impacta.controladores;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.table.DefaultTableModel;
-
 import br.com.impacta.persistencia.Filme;
 
 public class FilmeController {
