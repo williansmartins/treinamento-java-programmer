@@ -186,8 +186,17 @@ public class TelaCriarFilme {
 				filme.numVotos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
-				controller.criar(filme);	
-				modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+				if (ehNovo) {
+					controller.criar(filme);	
+					modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+				} else {
+					int linhaSelecionada = tabela.getSelectedRow();
+					modelo.removeRow(linhaSelecionada);
+					ehNovo = true;
+					
+					controller.criar(filme);	
+					modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+				}
 				
 				caixaTitulo.setText("");	
 				caixaVoto.setText("");
