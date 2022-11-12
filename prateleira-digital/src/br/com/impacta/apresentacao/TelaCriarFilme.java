@@ -241,7 +241,7 @@ public class TelaCriarFilme {
 	        	int linha = tabela.getSelectedRow();
 	        	if(linha>=0 && !event.getValueIsAdjusting() ) {
 					String titulo = tabela.getValueAt(linha, 0).toString();
-					caixaTitulo.setText(titulo);
+					
 					
 					//objetivo = encontrar 1 filme no meio de vários
 					Filme filmeEscolhido = null;
@@ -255,7 +255,14 @@ public class TelaCriarFilme {
 						}
 					}
 					
-					System.out.println(filmeEscolhido);
+					caixaTitulo.setText(filmeEscolhido.titulo);			
+					caixaVoto.setText(""+filmeEscolhido.numVotos);
+					caixaDuracao.setText(""+filmeEscolhido.duracao);
+					caixaAno.setText(""+filmeEscolhido.ano);
+					caixaNota.setText(""+filmeEscolhido.nota);			
+					caixaDiretores.setText(filmeEscolhido.diretores);			
+					caixaUrl.setText(filmeEscolhido.url);			
+					caixaGeneros.setText(filmeEscolhido.generos);
 					
 	        	}
 		    }
@@ -269,6 +276,8 @@ public class TelaCriarFilme {
 			Filme filme = new Filme();
 			filme.titulo = "Título"+i;
 			filme.ano = 2020+i;
+			filme.duracao = 100*i;
+			filme.url = "http://www.filme"+i+".com.br";
 			
 			//jogar o filme na galeria
 			controller.criar(filme);
