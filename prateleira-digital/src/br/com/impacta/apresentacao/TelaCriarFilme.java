@@ -159,10 +159,6 @@ public class TelaCriarFilme {
 		
 		//popular tabela com dados fake
 		popularTabela();
-//		modelo.addRow(new Object[] { "titulo1", 2001}); 
-//		modelo.addRow(new Object[] { "titulo2", 2002}); 
-//		modelo.addRow(new Object[] { "titulo3", 2003}); 
-//		modelo.addRow(new Object[] { "titulo4", 2004}); 
 		
 		//acoes
 		botaoSalvar.addActionListener(new ActionListener() {
@@ -242,12 +238,14 @@ public class TelaCriarFilme {
 		    @Override
 		    public void valueChanged(ListSelectionEvent event) {
 	        	int linha = tabela.getSelectedRow();
-				String titulo = tabela.getValueAt(linha, 0).toString();
-				System.out.println(titulo);
-				caixaTitulo.setText(titulo);
-				
-				//objetivo = encontrar 1 filme no meio de vários
-				System.out.println(controller.galeria);
+	        	if(linha>0) {
+					String titulo = tabela.getValueAt(linha, 0).toString();
+					System.out.println(titulo);
+					caixaTitulo.setText(titulo);
+					
+					//objetivo = encontrar 1 filme no meio de vários
+					System.out.println(controller.galeria);
+	        	}
 		    }
 		});
 
@@ -255,7 +253,6 @@ public class TelaCriarFilme {
 	
 	static void popularTabela(){
 		for(int i = 0; i<10; i++) {
-			System.out.println(i);
 			//criar instancia de um FILME
 			Filme filme = new Filme();
 			filme.titulo = "Título"+i;
