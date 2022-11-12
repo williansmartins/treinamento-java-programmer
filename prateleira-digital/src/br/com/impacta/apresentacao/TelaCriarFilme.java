@@ -275,9 +275,13 @@ public class TelaCriarFilme {
 			//criar instancia de um FILME
 			Filme filme = new Filme();
 			filme.titulo = "Título"+i;
-			filme.ano = 2020+i;
+			filme.numVotos = 10+i;
 			filme.duracao = 100*i;
+			filme.ano = 2020+i;
+			filme.nota = 10+i;
+			filme.diretores = "Diretor"+i;
 			filme.url = "http://www.filme"+i+".com.br";
+			filme.generos = "Genero"+i;
 			
 			//jogar o filme na galeria
 			controller.criar(filme);
