@@ -13,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -22,6 +23,8 @@ import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+
+import com.sun.codemodel.internal.JOp;
 
 import br.com.impacta.controladores.FilmeController;
 import br.com.impacta.persistencia.Filme;
@@ -213,7 +216,12 @@ public class TelaCriarFilme {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int linhaSelecionada = tabela.getSelectedRow();
-				modelo.removeRow(linhaSelecionada);
+				if(linhaSelecionada>=0) {
+					System.out.println(linhaSelecionada);
+					modelo.removeRow(linhaSelecionada);
+				}else {
+					JOptionPane.showMessageDialog(null, "selecione algum item");
+				}
 			}
 		});
 		
