@@ -185,7 +185,7 @@ public class TelaCriarFilme {
 				filme.nota = Double.parseDouble(stringNota);
 				filme.diretores = stringDiretores;
 				filme.duracao = Integer.parseInt(stringDuracao);
-				filme.numVotos = Integer.parseInt(stringVoto);
+				filme.votos = Integer.parseInt(stringVoto);
 				filme.url = stringUrl;				
 				
 				if (ehNovo) {
@@ -274,7 +274,7 @@ public class TelaCriarFilme {
 					}
 					
 					caixaTitulo.setText(filmeEscolhido.titulo);			
-					caixaVoto.setText(""+filmeEscolhido.numVotos);
+					caixaVoto.setText(""+filmeEscolhido.votos);
 					caixaDuracao.setText(""+filmeEscolhido.duracao);
 					caixaAno.setText(""+filmeEscolhido.ano);
 					caixaNota.setText(""+filmeEscolhido.nota);			
@@ -293,7 +293,7 @@ public class TelaCriarFilme {
 			//criar instancia de um FILME
 			Filme filme = new Filme();
 			filme.titulo = "Título"+i;
-			filme.numVotos = 10+i;
+			filme.votos = 10+i;
 			filme.duracao = 100*i;
 			filme.ano = 2020+i;
 			filme.nota = 10+i; System.out.println(filme.nota);

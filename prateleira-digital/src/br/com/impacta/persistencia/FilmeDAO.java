@@ -5,10 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilmeDAO {
-
+	
+	List<Filme> galeria = new ArrayList();
+	
 	//criar (C)
 	public void criar(Filme filme){
 		
@@ -21,11 +24,20 @@ public class FilmeDAO {
 			System.out.println("Conectado com sucesso!");
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from tb_filme;");
-			
+			ResultSet rs = stmt.executeQuery("select * from tb_filme;");			
 			while(rs.next()) {
-				System.out.println(rs.getString("titulo"));
-				System.out.println(rs.getInt("codigo"));
+				Filme filme = new Filme();
+				filme.codigo = rs.getInt("codigo");
+				filme.titulo = rs.getString("titulo");
+				filme.generos = rs.getString("generos");
+				filme.diretores = rs.getString("diretores");
+				filme.url = rs.getString("url");
+				filme.votos = rs.getInt("votos");
+				filme.nota = rs.getDouble("nota");
+				filme.ano = rs.getInt("ano");
+				filme.duracao = rs.getInt("duracao");
+
+				galeria.add(filme);
 			}
 			
 			con.close();
@@ -35,7 +47,7 @@ public class FilmeDAO {
 		} catch (SQLException e) {
 			e.printStackTrace(); 
 		} 
-		return null;
+		return galeria;
 	}
 	
 	//atualizar (U)

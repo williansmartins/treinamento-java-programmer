@@ -44,7 +44,7 @@ public class FilmeController {
 	
 	public List listar() {
 		FilmeDAO dao = new FilmeDAO();
-		dao.listar();
-		return null;
+		List retorno = dao.listar();
+		return retorno;
 	}
 }
