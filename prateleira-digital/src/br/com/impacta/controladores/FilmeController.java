@@ -12,7 +12,7 @@ public class FilmeController {
 
 	//criar
 	public void criar(Filme filme){
-		galeria.add(filme);			
+				
 	}
 	
 	//consultar

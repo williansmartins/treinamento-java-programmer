@@ -34,7 +34,6 @@ public class TelaCriarFilme {
 	static boolean ehNovo = true;
 
 	public static void main(String[] args) {
-		List galeria = controller.listar();
 		int margem1 = 100;
 		
 		JFrame frame = new JFrame();
@@ -289,21 +288,9 @@ public class TelaCriarFilme {
 	}
 	
 	static void popularTabela(){
-		for(int i = 0; i<10; i++) {
-			//criar instancia de um FILME
-			Filme filme = new Filme();
-			filme.titulo = "Título"+i;
-			filme.votos = 10+i;
-			filme.duracao = 100*i;
-			filme.ano = 2020+i;
-			filme.nota = 10+i; System.out.println(filme.nota);
-			filme.diretores = "Diretor"+i;
-			filme.url = "http://www.filme"+i+".com.br";
-			filme.generos = "Genero"+i;
-			
-			//jogar o filme na galeria
-			controller.criar(filme);
-			
+		List<Filme> galeria = controller.listar();
+		
+		for(Filme filme : galeria) {
 			//adicionar o filme na tabela
 			modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
 		}
