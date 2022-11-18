@@ -33,6 +33,7 @@ public class TelaCriarFilme {
 	static boolean ehNovo = true;
 
 	public static void main(String[] args) {
+		controller.listar();
 		int margem1 = 100;
 		
 		JFrame frame = new JFrame();
