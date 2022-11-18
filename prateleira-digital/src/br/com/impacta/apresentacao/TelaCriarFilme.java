@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -33,7 +34,7 @@ public class TelaCriarFilme {
 	static boolean ehNovo = true;
 
 	public static void main(String[] args) {
-		controller.listar();
+		List galeria = controller.listar();
 		int margem1 = 100;
 		
 		JFrame frame = new JFrame();
