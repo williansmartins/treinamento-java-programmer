@@ -26,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 
 import br.com.impacta.controladores.FilmeController;
 import br.com.impacta.persistencia.Filme;
+import br.com.impacta.persistencia.FilmeDAO;
 
 public class TelaCriarFilme {
 
@@ -150,6 +151,7 @@ public class TelaCriarFilme {
 		painel.add(new JScrollPane(tabela));
 		frame.add(painel);
 		
+		modelo.addColumn("Codigo");
 		modelo.addColumn("Titulo");
 		modelo.addColumn("Ano");
 
@@ -214,9 +216,14 @@ public class TelaCriarFilme {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int linhaSelecionada = tabela.getSelectedRow();
+				Object celula = tabela.getValueAt(linhaSelecionada, 0);
+				String codigoEmTexto = celula.toString();
+				int codigoEmInteiro =Integer.parseInt(codigoEmTexto);
+				
 				if(linhaSelecionada>=0) {
 					System.out.println(linhaSelecionada);
 					modelo.removeRow(linhaSelecionada);
+					controller.remover(codigoEmInteiro);
 				}else {
 					JOptionPane.showMessageDialog(null, "selecione algum item");
 				}
@@ -257,16 +264,16 @@ public class TelaCriarFilme {
 		    	ehNovo = false;
 	        	int linha = tabela.getSelectedRow();
 	        	if(linha>=0 && !event.getValueIsAdjusting() ) {
-					String titulo = tabela.getValueAt(linha, 0).toString();
+					int codigo =Integer.parseInt(tabela.getValueAt(linha, 0).toString());
 					
 					
 					//objetivo = encontrar 1 filme no meio de vários
 					Filme filmeEscolhido = null;
 					
-					for (Filme filme : controller.galeria) {
+					for (Filme filme : controller.listar()) {
 						System.out.println(filme.titulo);
 						
-						if( titulo.equals(filme.titulo) ) {
+						if(codigo == filme.codigo) {
 							filmeEscolhido = filme;
 							break;
 						}
@@ -292,7 +299,7 @@ public class TelaCriarFilme {
 		
 		for(Filme filme : galeria) {
 			//adicionar o filme na tabela
-			modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+			modelo.addRow(new Object[] {filme.codigo, filme.titulo, filme.ano}); 
 		}
 	}
 

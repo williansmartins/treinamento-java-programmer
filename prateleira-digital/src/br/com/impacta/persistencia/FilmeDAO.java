@@ -18,7 +18,7 @@ public class FilmeDAO {
 	}
 	
 	//listar (R)
-	public List listar(){
+	public List<Filme> listar(){
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prateleira_digital", "root", "Imp@ct@");
 			System.out.println("Conectado com sucesso!");
@@ -57,6 +57,14 @@ public class FilmeDAO {
 	
 	//remover (D)
 	public void remover(int codigo) {
-		
+		try {
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prateleira_digital", "root", "Imp@ct@");
+			System.out.println("Conectado com sucesso!");
+			
+			Statement stmt = con.createStatement();
+			stmt.execute("delete  from tb_filme where codigo = " + codigo);
+		} catch (SQLException e) {
+			e.printStackTrace(); 
+		} 
 	}
 }

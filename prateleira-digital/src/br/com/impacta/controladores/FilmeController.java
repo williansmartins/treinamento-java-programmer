@@ -28,9 +28,10 @@ public class FilmeController {
 	}
 	
 	//remover
-	public boolean remover(String titulo){
-		//TODO: implementar
-		return false;
+	public boolean remover(int codigo){
+		FilmeDAO dao = new FilmeDAO();
+		dao.remover(codigo);
+		return true;
 	}
 	
 	//sortear
@@ -42,9 +43,9 @@ public class FilmeController {
 		return null;
 	}
 	
-	public List listar() {
+	public List<Filme> listar() {
 		FilmeDAO dao = new FilmeDAO();
-		List retorno = dao.listar();
+		List<Filme> retorno = dao.listar();
 		return retorno;
 	}
 }
