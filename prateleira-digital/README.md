@@ -36,26 +36,9 @@ https://raw.githubusercontent.com/williansmartins/treinamento-java-programmer/ma
 # Comandos do MYSQL
 ## Criar
 `
-INSERT INTO `prateleira_digital`.`tb_filme`
-(`codigo`,
-`titulo`,
-`generos`,
-`nota`,
-`ano`,
-`duracao`,
-`votos`,
-`diretores`,
-`url`)
-VALUES
-(<{codigo: }>,
-<{titulo: }>,
-<{generos: }>,
-<{nota: }>,
-<{ano: }>,
-<{duracao: }>,
-<{votos: }>,
-<{diretores: }>,
-<{url: }>);
+ insert into tb_filme
+	(titulo, ano)
+	values('E o vento levou', 2020);
 `
 
 ## Buscar
