@@ -62,7 +62,12 @@ VALUES
 `select * from tb_filme`
 
 ## Atualizar
-`update from tb_filme set titulo = 'novo_titulo'  where codigo = <{codigo: }> `
+`
+update tb_filme
+	set generos = 'comedia',
+		   nota = 5
+	where codigo = 61;
+`
 
 ## Remover
 `delete from tb_filme  where codigo = <{codigo: }>`
