@@ -33,6 +33,7 @@ public class TelaCriarFilme {
 	static FilmeController controller = new FilmeController();
 	static DefaultTableModel modelo = new DefaultTableModel();
 	static boolean ehNovo = true;
+	static List<Filme> galeria = controller.listar();
 
 	public static void main(String[] args) {
 		int margem1 = 100;
@@ -248,6 +249,16 @@ public class TelaCriarFilme {
 				caixaGeneros.setText("");
 			}
 		});
+		
+		botaoSortear.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Long aleatorioLong = Math.round(Math.random()*galeria.size());
+				int aleatorioInt = aleatorioLong.intValue();  
+				System.out.println("sorteando..." + Math.round(Math.random()*galeria.size()));
+				JOptionPane.showMessageDialog(null, "sorteando..." + galeria.get(aleatorioInt));
+			}
+		});
 
 		labelTopo.addMouseListener(new MouseAdapter() {
 			@Override
@@ -299,8 +310,6 @@ public class TelaCriarFilme {
 	}
 
 	static void popularTabela() {
-		List<Filme> galeria = controller.listar();
-
 		for (Filme filme : galeria) {
 			// adicionar o filme na tabela
 			modelo.addRow(new Object[] { filme.codigo, filme.titulo, filme.ano });
