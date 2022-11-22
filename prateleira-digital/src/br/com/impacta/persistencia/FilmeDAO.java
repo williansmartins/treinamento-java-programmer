@@ -2,6 +2,7 @@ package br.com.impacta.persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,13 +15,27 @@ public class FilmeDAO {
 	
 	//criar (C)
 	public void criar(Filme filme){
-		
+		try {
+			Connection con = DriverManager.getConnection("jdbc:mysql://172.16.23.9:3306/prateleira_digital", "root", "Imp@ct@");
+			System.out.println("Conectado com sucesso!");
+			
+			String sql = "INSERT INTO tb_filme (titulo, ano) VALUES('xxx', 2022) ";
+			
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.executeUpdate();
+			
+			con.close();
+			pstmt.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace(); 
+		} 
 	}
 	
 	//listar (R)
 	public List<Filme> listar(){
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prateleira_digital", "root", "Imp@ct@");
+			Connection con = DriverManager.getConnection("jdbc:mysql://172.16.23.9:3306/prateleira_digital", "root", "Imp@ct@");
 			System.out.println("Conectado com sucesso!");
 			
 			Statement stmt = con.createStatement();
@@ -58,7 +73,7 @@ public class FilmeDAO {
 	//remover (D)
 	public void remover(int codigo) {
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prateleira_digital", "root", "Imp@ct@");
+			Connection con = DriverManager.getConnection("jdbc:mysql://172.16.23.9:3306/prateleira_digital", "root", "Imp@ct@");
 			System.out.println("Conectado com sucesso!");
 			
 			Statement stmt = con.createStatement();

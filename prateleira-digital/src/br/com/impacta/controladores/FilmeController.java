@@ -12,7 +12,8 @@ public class FilmeController {
 
 	//criar
 	public void criar(Filme filme){
-				
+		FilmeDAO dao = new FilmeDAO();
+		dao.criar(filme);
 	}
 	
 	//consultar

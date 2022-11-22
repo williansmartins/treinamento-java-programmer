@@ -191,7 +191,7 @@ public class TelaCriarFilme {
 				
 				if (ehNovo) {
 					controller.criar(filme);	
-					modelo.addRow(new Object[] { filme.titulo, filme.ano}); 
+					modelo.addRow(new Object[] { "", filme.titulo, filme.ano}); 
 				} else {
 					int linhaSelecionada = tabela.getSelectedRow();
 					modelo.removeRow(linhaSelecionada);
