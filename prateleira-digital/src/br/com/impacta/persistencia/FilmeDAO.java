@@ -19,9 +19,12 @@ public class FilmeDAO {
 			Connection con = DriverManager.getConnection("jdbc:mysql://172.16.23.9:3306/prateleira_digital", "root", "Imp@ct@");
 			System.out.println("Conectado com sucesso!");
 			
-			String sql = "INSERT INTO tb_filme (titulo, ano) VALUES('xxx', 2022) ";
+			String sql = "INSERT INTO tb_filme (titulo, ano) VALUES(?, ?) ";
 			
 			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, filme.titulo);
+			pstmt.setInt(2, filme.ano);
+			
 			pstmt.executeUpdate();
 			
 			con.close();
