@@ -19,11 +19,20 @@ public class FilmeDAO {
 			Connection con = DriverManager.getConnection("jdbc:mysql://172.16.23.9:3306/prateleira_digital", "root", "Imp@ct@");
 			System.out.println("Conectado com sucesso!");
 			
-			String sql = "INSERT INTO tb_filme (titulo, ano) VALUES(?, ?) ";
+			String sql = "INSERT INTO tb_filme (titulo, ano, duracao, votos, diretores, url, generos, nota) VALUES(?, ?, ?, ?, ?, ?, ?, ? ) ";
 			
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, filme.titulo);
 			pstmt.setInt(2, filme.ano);
+			pstmt.setInt(3, filme.duracao);
+			pstmt.setInt(4, filme.votos);
+			pstmt.setString(5, filme.diretores);
+			pstmt.setString(6, filme.url);
+			pstmt.setString(7, filme.generos);
+			pstmt.setDouble(8, filme.nota);
+			
+			System.out.println("Ceiado com Sucesso");
+			
 			
 			pstmt.executeUpdate();
 			
