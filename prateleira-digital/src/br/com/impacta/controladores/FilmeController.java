@@ -48,5 +48,12 @@ public class FilmeController {
 		FilmeDAO dao = new FilmeDAO();
 		List<Filme> retorno = dao.listar();
 		return retorno;
+		
 	}
+	
+		//criar
+		public void atualizar(Filme filme){
+			FilmeDAO dao = new FilmeDAO();
+			dao.atualizar(filme);
+		}
 }
