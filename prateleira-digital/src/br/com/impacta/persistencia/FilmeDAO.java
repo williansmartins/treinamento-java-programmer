@@ -86,7 +86,8 @@ public class FilmeDAO {
 					"Imp@ct@");
 			System.out.println("Conectado com sucesso!");
 
-			String sql = "UPDATE tb_filme set titulo = ?, ano = ?, duracao = ?, votos = ?, diretores = ?, url = ?, generos = ?, nota = ?  where codigo = ?;";
+			String sql = "UPDATE tb_filme set titulo = ?, ano = ?, duracao = ?, votos = ?, diretores = ?,"
+					+ " url = ?, generos = ?, nota = ?  where codigo = ?;";
 
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, filme.titulo);

@@ -61,6 +61,12 @@ public class TelaCriarFilme {
 		botaoLimpar.setSize(150, 40);
 		botaoLimpar.setLocation(440, 450);
 		frame.add(botaoLimpar);
+		
+		JButton botaoSortear = new JButton();
+		botaoSortear.setText("Sortear");
+		botaoSortear.setSize(150, 40);
+		botaoSortear.setLocation(610, 450);
+		frame.add(botaoSortear);
 
 		JLabel labelTopo = new JLabel("Gerenciamento de filmes");
 		labelTopo.setFont(new Font("Arial", Font.BOLD, 34));
@@ -188,8 +194,6 @@ public class TelaCriarFilme {
 					modelo.addRow(new Object[] { "", filme.titulo, filme.ano });
 				} else {
 					int linhaSelecionada = tabela.getSelectedRow();
-					modelo.removeRow(linhaSelecionada);
-					ehNovo = true;
 
 					Object celula = modelo.getValueAt(linhaSelecionada, 0);
 					String codigoEmTexto = celula.toString();
@@ -197,7 +201,9 @@ public class TelaCriarFilme {
 					
 					filme.codigo = codigoEmInteiro;
 					controller.atualizar(filme);
+					modelo.removeRow(linhaSelecionada);
 					modelo.addRow(new Object[] { filme.codigo, filme.titulo, filme.ano });
+					ehNovo = true;
 				}
 
 				caixaTitulo.setText("");
