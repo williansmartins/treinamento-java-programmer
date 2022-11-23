@@ -23,14 +23,14 @@ public class FilmeDAO {
 			String sql = "INSERT INTO tb_filme (titulo, ano, duracao, votos, diretores, url, generos, nota) VALUES(?, ?, ?, ?, ?, ?, ?, ? ) ";
 
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, filme.titulo);
-			pstmt.setInt(2, filme.ano);
-			pstmt.setInt(3, filme.duracao);
-			pstmt.setInt(4, filme.votos);
-			pstmt.setString(5, filme.diretores);
-			pstmt.setString(6, filme.url);
-			pstmt.setString(7, filme.generos);
-			pstmt.setDouble(8, filme.nota);
+			pstmt.setString(1, filme.getTitulo());
+			pstmt.setInt(2, filme.getAno());
+			pstmt.setInt(3, filme.getDuracao());
+			pstmt.setInt(4, filme.getVotos());
+			pstmt.setString(5, filme.getDiretores());
+			pstmt.setString(6, filme.getUrl());
+			pstmt.setString(7, filme.getGeneros());
+			pstmt.setDouble(8, filme.getNota());
 
 			System.out.println("Criado com Sucesso");
 
@@ -55,15 +55,15 @@ public class FilmeDAO {
 			ResultSet rs = stmt.executeQuery("select * from tb_filme;");
 			while (rs.next()) {
 				Filme filme = new Filme();
-				filme.codigo = rs.getInt("codigo");
-				filme.titulo = rs.getString("titulo");
-				filme.generos = rs.getString("generos");
-				filme.diretores = rs.getString("diretores");
-				filme.url = rs.getString("url");
-				filme.votos = rs.getInt("votos");
-				filme.nota = rs.getDouble("nota");
-				filme.ano = rs.getInt("ano");
-				filme.duracao = rs.getInt("duracao");
+				filme.setCodigo(rs.getInt("codigo"));
+				filme.setTitulo(rs.getString("titulo"));
+				filme.setGeneros(rs.getString("generos"));
+				filme.setDiretores(rs.getString("diretores"));
+				filme.setUrl(rs.getString("url"));
+				filme.setVotos(rs.getInt("votos"));
+				filme.setNota(rs.getDouble("nota"));
+				filme.setAno(rs.getInt("ano"));
+				filme.setDuracao(rs.getInt("duracao"));
 
 				galeria.add(filme);
 			}
@@ -90,15 +90,15 @@ public class FilmeDAO {
 					+ " url = ?, generos = ?, nota = ?  where codigo = ?;";
 
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, filme.titulo);
-			pstmt.setInt(2, filme.ano);
-			pstmt.setInt(3, filme.duracao);
-			pstmt.setInt(4, filme.votos);
-			pstmt.setString(5, filme.diretores);
-			pstmt.setString(6, filme.url);
-			pstmt.setString(7, filme.generos);
-			pstmt.setDouble(8, filme.nota);
-			pstmt.setInt(9, filme.codigo);
+			pstmt.setString(1, filme.getTitulo());
+			pstmt.setInt(2, filme.getAno());
+			pstmt.setInt(3, filme.getDuracao());
+			pstmt.setInt(4, filme.getVotos());
+			pstmt.setString(5, filme.getDiretores());
+			pstmt.setString(6, filme.getUrl());
+			pstmt.setString(7, filme.getGeneros());
+			pstmt.setDouble(8, filme.getNota());
+			pstmt.setInt(9, filme.getCodigo());
 
 			System.out.println("Atualizado com Sucesso");
 

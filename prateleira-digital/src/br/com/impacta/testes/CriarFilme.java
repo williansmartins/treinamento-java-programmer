@@ -34,7 +34,7 @@ public class CriarFilme {
 		System.out.println("Digite o título do Filme:");
 		String titulo = scan.nextLine();
 		System.out.println("O título do filme escolhido é: " + titulo);
-		filme.titulo = titulo;
+		filme.setTitulo(titulo);
 		System.out.println("----");
 		
 		/*

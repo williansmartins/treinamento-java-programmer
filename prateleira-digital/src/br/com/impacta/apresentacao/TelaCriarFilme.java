@@ -185,18 +185,18 @@ public class TelaCriarFilme {
 				String stringUrl = caixaUrl.getText();
 
 				Filme filme = new Filme();
-				filme.titulo = stringTitulo;
-				filme.ano = Integer.parseInt(stringAno);
-				filme.generos = stringGeneros;
-				filme.nota = Double.parseDouble(stringNota);
-				filme.diretores = stringDiretores;
-				filme.duracao = Integer.parseInt(stringDuracao);
-				filme.votos = Integer.parseInt(stringVoto);
-				filme.url = stringUrl;
+				filme.setTitulo(stringTitulo);
+				filme.setAno(Integer.parseInt(stringAno));
+				filme.setGeneros(stringGeneros);
+				filme.setNota(Double.parseDouble(stringNota));
+				filme.setDiretores(stringDiretores);
+				filme.setDuracao(Integer.parseInt(stringDuracao));
+				filme.setVotos(Integer.parseInt(stringVoto));
+				filme.setUrl(stringUrl);
 
 				if (ehNovo) {
 					controller.criar(filme);
-					modelo.addRow(new Object[] { "", filme.titulo, filme.ano });
+					modelo.addRow(new Object[] { "", filme.getTitulo(), filme.getAno() });
 				} else {
 					int linhaSelecionada = tabela.getSelectedRow();
 
@@ -204,10 +204,10 @@ public class TelaCriarFilme {
 					String codigoEmTexto = celula.toString();
 					int codigoEmInteiro = Integer.parseInt(codigoEmTexto);
 					
-					filme.codigo = codigoEmInteiro;
+					filme.setCodigo(codigoEmInteiro);
 					controller.atualizar(filme);
 					modelo.removeRow(linhaSelecionada);
-					modelo.addRow(new Object[] { filme.codigo, filme.titulo, filme.ano });
+					modelo.addRow(new Object[] { filme.getCodigo(), filme.getTitulo(), filme.getAno() });
 					ehNovo = true;
 				}
 
@@ -261,14 +261,14 @@ public class TelaCriarFilme {
 				int aleatorioInt = aleatorioLong.intValue();  
 				Filme filme = galeria.get(aleatorioInt);
 				
-				String mensagem = "Titulo: " + filme.titulo + ". Deseja abrir o site?";
+				String mensagem = "Titulo: " + filme.getTitulo() + ". Deseja abrir o site?";
 				int resposta = JOptionPane.showConfirmDialog(null, mensagem , 
 						"Filme sorteado", 
 						JOptionPane.OK_CANCEL_OPTION);
 				
 				if(resposta==0) {
 					try {
-						Desktop.getDesktop().browse(new URI(filme.url));
+						Desktop.getDesktop().browse(new URI(filme.getUrl()));
 					} catch (IOException e1) {
 						e1.printStackTrace();
 					} catch (URISyntaxException e1) {
@@ -304,22 +304,22 @@ public class TelaCriarFilme {
 					Filme filmeEscolhido = null;
 
 					for (Filme filme : controller.listar()) {
-						System.out.println(filme.titulo);
+						System.out.println(filme.getTitulo());
 
-						if (codigo == filme.codigo) {
+						if (codigo == filme.getCodigo()) {
 							filmeEscolhido = filme;
 							break;
 						}
 					}
 
-					caixaTitulo.setText(filmeEscolhido.titulo);
-					caixaVoto.setText("" + filmeEscolhido.votos);
-					caixaDuracao.setText("" + filmeEscolhido.duracao);
-					caixaAno.setText("" + filmeEscolhido.ano);
-					caixaNota.setText("" + filmeEscolhido.nota);
-					caixaDiretores.setText(filmeEscolhido.diretores);
-					caixaUrl.setText(filmeEscolhido.url);
-					caixaGeneros.setText(filmeEscolhido.generos);
+					caixaTitulo.setText(filmeEscolhido.getTitulo());
+					caixaVoto.setText("" + filmeEscolhido.getVotos());
+					caixaDuracao.setText("" + filmeEscolhido.getDuracao());
+					caixaAno.setText("" + filmeEscolhido.getAno());
+					caixaNota.setText("" + filmeEscolhido.getNota());
+					caixaDiretores.setText(filmeEscolhido.getDiretores());
+					caixaUrl.setText(filmeEscolhido.getUrl());
+					caixaGeneros.setText(filmeEscolhido.getGeneros());
 
 				}
 			}
@@ -330,7 +330,7 @@ public class TelaCriarFilme {
 	static void popularTabela() {
 		for (Filme filme : galeria) {
 			// adicionar o filme na tabela
-			modelo.addRow(new Object[] { filme.codigo, filme.titulo, filme.ano });
+			modelo.addRow(new Object[] { filme.getCodigo(), filme.getTitulo(), filme.getAno() });
 		}
 	}
 
