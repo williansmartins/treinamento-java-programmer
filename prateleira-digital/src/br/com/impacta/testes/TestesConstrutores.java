@@ -7,7 +7,7 @@ public class TestesConstrutores {
 	public static void main(String[] args) {
 		//Instanciar objeto usando construtor padrão
 		Filme f1 = new Filme();
-		f1.setTitulo("Batman");
+		f1.setTitulo("Batman"); 
 		f1.setNota(10);
 		f1.setDuracao(120);
 
