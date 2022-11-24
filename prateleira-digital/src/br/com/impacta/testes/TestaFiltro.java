@@ -14,15 +14,22 @@ public class TestaFiltro {
 
 	public static void main(String[] args) {
 		System.out.println(galeria.size());
-		List<Filme> resultado = printar(galeria); 
+		List<Filme> resultado = filtrar(galeria); 
 		System.out.println(resultado.size());
+		
+		if(galeria.size() == 69 && resultado.size() == 3) {
+			System.out.println("passou no teste!!!");
+		}else {
+			System.out.println("Não passou no teste!!!");
+		}
+		
 	}
 
-	static List<Filme> printar(List<Filme> galeria) {
+	static List<Filme> filtrar(List<Filme> galeria) {
 		List<Filme> listaNova = new ArrayList<Filme>();
 		
 		for (Filme f : galeria) {
-			if(f.getGeneros() != null && f.getGeneros().equals("willians")) {
+			if(f.getGeneros() != null && f.getGeneros().equals("terro")) {
 			listaNova.add(f);
 			}
 		}
