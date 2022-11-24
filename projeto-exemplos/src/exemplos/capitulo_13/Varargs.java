@@ -1,4 +1,4 @@
-package capitulo_06;
+package exemplos.capitulo_13;
 
 public class Varargs {
 
