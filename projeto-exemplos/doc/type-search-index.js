@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"exemplos.capitulo_13","l":"Calculadora"},{"p":"exemplos.capitulo_13","l":"Varargs"}];updateSearchResults();

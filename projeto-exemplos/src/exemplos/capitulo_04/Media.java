@@ -1,4 +1,4 @@
-package capitulo_04;
+package exemplos.capitulo_04;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 public class Media {
 	public static void main(String[] args) {
 
-		JFrame frame = new JFrame("Calcular Média");
+		JFrame frame = new JFrame("Calcular Mï¿½dia");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(320, 400);
@@ -31,7 +31,7 @@ public class Media {
 		caixa3.setBounds(15, 90, 200, 30);
 		frame.add(caixa3);
 
-		JButton botaoMedia = new JButton("Média");
+		JButton botaoMedia = new JButton("Mï¿½dia");
 		botaoMedia.setBounds(15, 130, 100, 30);
 		frame.add(botaoMedia);
 
