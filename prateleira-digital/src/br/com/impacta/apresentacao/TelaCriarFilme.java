@@ -32,6 +32,12 @@ import br.com.impacta.controladores.FilmeController;
 import br.com.impacta.persistencia.Filme;
 import br.com.impacta.persistencia.FilmeDAO;
 
+
+/**
+ * View do projeto
+ * 
+ * 
+ * */
 public class TelaCriarFilme {
 
 	static FilmeController controller = new FilmeController();

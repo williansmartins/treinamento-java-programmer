@@ -6,11 +6,23 @@ import java.util.List;
 import br.com.impacta.persistencia.Filme;
 import br.com.impacta.persistencia.FilmeDAO;
 
+/**
+ * Classe que controla o gerenciamento dos filmes
+ * 
+ * @author Willians Martins de Morais
+ * @since 1.0.0
+ *
+ */
 public class FilmeController {
 	
 	public List<Filme> galeria = new ArrayList<Filme>();	
 
 	//criar
+	/**
+	 * Chama a classe DAO para salvar o filme no banco de dados
+	 * 
+	 * 
+	 * */
 	public void criar(Filme filme){
 		FilmeDAO dao = new FilmeDAO();
 		dao.criar(filme);
@@ -29,6 +41,11 @@ public class FilmeController {
 	}
 	
 	//remover
+	/**
+	 * Remove o filme do banco de dados
+	 * @param codigo Chave primaria no banco de dados
+	 * @return devolve true se a remoção foi bem sucedida
+	 */
 	public boolean remover(int codigo){
 		FilmeDAO dao = new FilmeDAO();
 		dao.remover(codigo);
