@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -338,6 +339,8 @@ public class TelaCriarFilme {
 			// adicionar o filme na tabela
 			modelo.addRow(new Object[] { filme.getCodigo(), filme.getTitulo(), filme.getAno() });
 		}
+		
+		
 	}
 
 }
