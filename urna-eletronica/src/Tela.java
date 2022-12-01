@@ -168,6 +168,11 @@ public class Tela extends JFrame{
 		button_2_2_1_1_1.setBackground(new Color(255, 165, 0));
 		
 		JButton button_2_2_1_1_1_1 = new JButton("CONFIRMA");
+		button_2_2_1_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\fim.jpg"));
+			}
+		});
 		button_2_2_1_1_1_1.setBounds(226, 199, 107, 36);
 		panel.add(button_2_2_1_1_1_1);
 		button_2_2_1_1_1_1.setBackground(Color.GREEN);
