@@ -8,9 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class Tela extends JFrame{
 	private static JTextField visor;
+	static JLabel foto = new JLabel("");
 	
 	public Tela() {
 		getContentPane().setLayout(null);
@@ -156,6 +158,8 @@ public class Tela extends JFrame{
 		JButton button_2_2_1_1_1 = new JButton("CORRIGE");
 		button_2_2_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				visor.setText("");
+				foto.setIcon(null);
 			}
 		});
 		button_2_2_1_1_1.setBounds(109, 199, 107, 36);
@@ -178,14 +182,32 @@ public class Tela extends JFrame{
 		getContentPane().add(visor);
 		visor.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBackground(Color.DARK_GRAY);
-		lblNewLabel.setBounds(10, 77, 177, 240);
-		getContentPane().add(lblNewLabel);
+		
+		foto.setHorizontalAlignment(SwingConstants.CENTER);
+		foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
+		foto.setBackground(Color.DARK_GRAY);
+		foto.setBounds(10, 77, 177, 240);
+		getContentPane().add(foto);
 	}
 	
 	static void metodo(String numero){
 		String auxiliar = visor.getText() + numero;
 		visor.setText(auxiliar);
+		
+		if(auxiliar.equals("22")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato1.JPG"));			
+		}
+		
+		if(auxiliar.equals("13")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato2.JPG"));			
+		}
+		
+		if(auxiliar.equals("12")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato3.JPG"));			
+		}
+		
+		if(auxiliar.equals("15")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato4.JPG"));			
+		}
 	}
 }
