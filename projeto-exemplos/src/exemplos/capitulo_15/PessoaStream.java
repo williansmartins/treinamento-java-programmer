@@ -2,6 +2,7 @@ package exemplos.capitulo_15;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 public class PessoaStream {
@@ -9,9 +10,9 @@ public class PessoaStream {
 		Pessoa p1 = new Pessoa("Washington", 35, "masculino");
 		Pessoa p2 = new Pessoa("Willians", 40, "masculino");
 		Pessoa p3 = new Pessoa("Ulisses", 50, "masculino");
-		Pessoa p4 = new Pessoa("Rosália", 65, "feminino");
+		Pessoa p4 = new Pessoa("Rosalia", 65, "feminino");
 		Pessoa p5 = new Pessoa("Luis", 70, "masculino");
-		
+				
 		List<Pessoa> pessoas = new ArrayList<>();
 		pessoas.add(p1);
 		pessoas.add(p2);
@@ -19,13 +20,20 @@ public class PessoaStream {
 		pessoas.add(p4);
 		pessoas.add(p5);
 		
+//		for (Pessoa p : pessoas) {
+//			if(p.sexo.equals("masculino") && p.idade>40) {
+//				System.out.println(p.nome);							
+//			}
+//		}
+		
+
 		System.out.println("-------------- Filtrando somente os nomes");		
 		pessoas.stream()
 				.forEach( p -> System.out.println(p.nome) );
 		
 		System.out.println("-------------- Limitando");		
 		pessoas.stream()
-				.limit(3)
+				.skip(3)
 				.forEach( p -> System.out.println(p.nome) );
 		
 		System.out.println("-------------- Ordenando");		
@@ -38,17 +46,18 @@ public class PessoaStream {
 				.filter( p -> p.nome.equals("Willians") )
 				.forEach( p -> System.out.println(p) );
 		
-		System.out.println("-------------- Múltiplos filtros");		
+		System.out.println("-------------- Multiplos filtros");		
 		pessoas.stream()
 				.filter( p -> p.idade > 40 )
 				.filter( p -> p.idade < 70 )
 				.forEach( p -> System.out.println(p) );
 		
-		System.out.println("-------------- Gerando uma nova lista");		
-		List<String> nomes = pessoas.stream()
-									.map( Pessoa::getNome )
-									.toList();		
-		nomes.stream().forEach( System.out::println );
+		System.out.println("-------------- Multiplos filtros");		
+		long count = pessoas.stream()
+				.filter( p -> p.idade > 40 )
+				.filter( p -> p.idade < 70 )
+				.count( );
+		System.out.println(count);
 		
 		System.out.println("-------------- Contando itens");		
 		System.out.println( pessoas.stream()
@@ -67,5 +76,13 @@ public class PessoaStream {
 							.max( Comparator.comparing(Pessoa::getIdade))
 							);
 		
+		
+		
+//		System.out.println("-------------- Gerando uma nova lista");		
+//		List<String> nomes = pessoas.stream()
+//									.map( Pessoa::getNome )
+//									.toList();		
+//		nomes.stream().forEach( System.out::println );
+//		
 	}
 }

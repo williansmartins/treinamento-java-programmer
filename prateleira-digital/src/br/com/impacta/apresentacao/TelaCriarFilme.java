@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -32,6 +33,12 @@ import br.com.impacta.controladores.FilmeController;
 import br.com.impacta.persistencia.Filme;
 import br.com.impacta.persistencia.FilmeDAO;
 
+
+/**
+ * View do projeto
+ * 
+ * 
+ * */
 public class TelaCriarFilme {
 
 	static FilmeController controller = new FilmeController();
@@ -332,6 +339,8 @@ public class TelaCriarFilme {
 			// adicionar o filme na tabela
 			modelo.addRow(new Object[] { filme.getCodigo(), filme.getTitulo(), filme.getAno() });
 		}
+		
+		
 	}
 
 }
