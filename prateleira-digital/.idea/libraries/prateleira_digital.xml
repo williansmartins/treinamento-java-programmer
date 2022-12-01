@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="prateleira-digital">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/meu-programa.jar!/" />
+      <root url="jar://$PROJECT_DIR$/teste-teclado.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

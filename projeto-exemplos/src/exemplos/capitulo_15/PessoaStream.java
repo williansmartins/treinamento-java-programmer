@@ -1,6 +1,7 @@
 package exemplos.capitulo_15;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class PessoaStream {
@@ -48,6 +49,23 @@ public class PessoaStream {
 									.map( Pessoa::getNome )
 									.toList();		
 		nomes.stream().forEach( System.out::println );
+		
+		System.out.println("-------------- Contando itens");		
+		System.out.println( pessoas.stream()
+							.filter( p -> p.idade > 40 )
+							.filter( p -> p.idade < 70 )
+							.count()
+							);
+		
+		System.out.println("-------------- Menor valor");		
+		System.out.println( pessoas.stream()
+							.min( Comparator.comparing(Pessoa::getIdade))
+							);
+		
+		System.out.println("-------------- Maior valor");		
+		System.out.println( pessoas.stream()
+							.max( Comparator.comparing(Pessoa::getIdade))
+							);
 		
 	}
 }
