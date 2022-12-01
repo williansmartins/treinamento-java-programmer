@@ -1,14 +1,21 @@
-import javax.swing.JFrame;
-import javax.swing.JButton;
 import java.awt.Color;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class Tela extends JFrame{
 	private static JTextField visor;
@@ -171,6 +178,10 @@ public class Tela extends JFrame{
 		button_2_2_1_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\fim.jpg"));
+				String numeroEscolhido = visor.getText();
+				System.out.println("Candidato escolhido:" + numeroEscolhido);
+				
+				
 			}
 		});
 		button_2_2_1_1_1_1.setBounds(226, 199, 107, 36);
