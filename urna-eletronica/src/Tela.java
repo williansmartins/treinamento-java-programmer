@@ -148,6 +148,7 @@ public class Tela extends JFrame{
 		JButton button_2_2_1_1 = new JButton("BRANCO");
 		button_2_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
 			}
 		});
 		button_2_2_1_1.setBounds(10, 199, 89, 36);
@@ -159,7 +160,7 @@ public class Tela extends JFrame{
 		button_2_2_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				visor.setText("");
-				foto.setIcon(null);
+				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
 			}
 		});
 		button_2_2_1_1_1.setBounds(109, 199, 107, 36);
@@ -184,7 +185,7 @@ public class Tela extends JFrame{
 		
 		
 		foto.setHorizontalAlignment(SwingConstants.CENTER);
-		foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
+		foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
 		foto.setBackground(Color.DARK_GRAY);
 		foto.setBounds(10, 77, 177, 240);
 		getContentPane().add(foto);
