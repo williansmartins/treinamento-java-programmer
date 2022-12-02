@@ -2,13 +2,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 import java.io.IOException;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+import javax.swing.JSlider;
 
 public class Tela extends JFrame{
 	private static JTextField visor;
@@ -155,7 +155,7 @@ public class Tela extends JFrame{
 		JButton button_2_2_1_1 = new JButton("BRANCO");
 		button_2_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
+				foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
 			}
 		});
 		button_2_2_1_1.setBounds(10, 199, 89, 36);
@@ -167,7 +167,7 @@ public class Tela extends JFrame{
 		button_2_2_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				visor.setText("");
-				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
+				foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
 			}
 		});
 		button_2_2_1_1_1.setBounds(109, 199, 107, 36);
@@ -177,11 +177,19 @@ public class Tela extends JFrame{
 		JButton button_2_2_1_1_1_1 = new JButton("CONFIRMA");
 		button_2_2_1_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\fim.jpg"));
+				foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\fim.jpg"));
 				String numeroEscolhido = visor.getText();
 				System.out.println("Candidato escolhido:" + numeroEscolhido);
 				
 				
+				String mp3FileName = "C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\confirma-urna.mp3";
+				try (FileInputStream fis = new FileInputStream(mp3FileName ))
+				{
+				    Player player = new Player(fis);
+				    player.play();
+				} catch (IOException | JavaLayerException e2) {
+				    e2.printStackTrace();
+				}
 			}
 		});
 		button_2_2_1_1_1_1.setBounds(226, 199, 107, 36);
@@ -201,10 +209,14 @@ public class Tela extends JFrame{
 		
 		
 		foto.setHorizontalAlignment(SwingConstants.CENTER);
-		foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
+		foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\brasao.JPG"));
 		foto.setBackground(Color.DARK_GRAY);
 		foto.setBounds(10, 77, 177, 240);
 		getContentPane().add(foto);
+		
+		JSlider slider = new JSlider();
+		slider.setBounds(138, 23, 200, 16);
+		getContentPane().add(slider);
 	}
 	
 	static void metodo(String numero){
@@ -212,19 +224,19 @@ public class Tela extends JFrame{
 		visor.setText(auxiliar);
 		
 		if(auxiliar.equals("22")) {
-			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato1.JPG"));			
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato1.JPG"));			
 		}
 		
 		if(auxiliar.equals("13")) {
-			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato2.JPG"));			
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato2.JPG"));			
 		}
 		
 		if(auxiliar.equals("12")) {
-			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato3.JPG"));			
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato3.JPG"));			
 		}
 		
 		if(auxiliar.equals("15")) {
-			foto.setIcon(new ImageIcon("C:\\dev\\projetos\\treinamento-java-programmer\\urna-eletronica\\src\\candidato4.JPG"));			
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato4.JPG"));			
 		}
 	}
 }
