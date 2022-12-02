@@ -155,6 +155,7 @@ public class Tela extends JFrame{
 		JButton button_2_2_1_1 = new JButton("BRANCO");
 		button_2_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				visor.setText(""); 
 				foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato0.JPG"));
 			}
 		});
@@ -196,16 +197,16 @@ public class Tela extends JFrame{
 		panel.add(button_2_2_1_1_1_1);
 		button_2_2_1_1_1_1.setBackground(Color.GREEN);
 		
+		visor = new JTextField();
+		visor.setBounds(12, 16, 49, 27);
+		panel.add(visor);
+		visor.setColumns(10);
+		
 		JLabel lblEleitoral = new JLabel("Eleitoral");
 		lblEleitoral.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblEleitoral.setFont(new Font("Tahoma", Font.BOLD, 24));
 		lblEleitoral.setBounds(316, 37, 220, 27);
 		getContentPane().add(lblEleitoral);
-		
-		visor = new JTextField();
-		visor.setBounds(26, 43, 132, 27);
-		getContentPane().add(visor);
-		visor.setColumns(10);
 		
 		
 		foto.setHorizontalAlignment(SwingConstants.CENTER);
@@ -213,10 +214,6 @@ public class Tela extends JFrame{
 		foto.setBackground(Color.DARK_GRAY);
 		foto.setBounds(10, 77, 177, 240);
 		getContentPane().add(foto);
-		
-		JSlider slider = new JSlider();
-		slider.setBounds(138, 23, 200, 16);
-		getContentPane().add(slider);
 	}
 	
 	static void metodo(String numero){
@@ -237,6 +234,14 @@ public class Tela extends JFrame{
 		
 		if(auxiliar.equals("15")) {
 			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato4.JPG"));			
+		}
+		
+		if(auxiliar.equals("11")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato5.JPG"));			
+		}
+		
+		if(auxiliar.equals("33")) {
+			foto.setIcon(new ImageIcon("C:\\dev\\projects\\treinamento-java-programmer\\urna-eletronica\\src\\candidato6.JPG"));			
 		}
 	}
 }
