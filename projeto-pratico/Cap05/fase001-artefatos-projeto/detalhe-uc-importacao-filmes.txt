@@ -1,0 +1,24 @@
+1) Importar dados de filmes
+
+1.1 O usuário seleciona a opção de importação dos dados de filmes
+1.2 O sistema solicita o caminho do arquivo 
+1.3 O usuário seleciona o arquivo desejado (RN1)(A1)
+1.4 O sistema processa o arquivo selecionado armazenando os dados no repositorio de dados
+1.5 O sistema exibe uma mensagem para o usuário informando sobre o término da operação (RN2)(A2)
+
+-----
+
+A1: Caso o arquivo esteja num formato inválido, emite uma mensagem explicativa para o usuário
+A2: Caso haja falha na conexão com os dados, uma mensagem deve ser exibida ao usuário e o caso de uso se encerra.
+
+-----
+
+RN1: Tipos de arquivo
+
+O arquivo deve ter o formato CSV com o separador sendo o caracter "ponto e vírgula"
+
+-----
+
+RN2: Erro de conversão, processamento, 
+
+Os erros de conversão e relacionados devem ser ignorados no processamento, passando para a próxima linha do arquivo.
